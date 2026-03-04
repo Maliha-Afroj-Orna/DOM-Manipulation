@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <style>
+        h1 {
+            color: red;
+        }
+        #food-title {
+            color: green;
+           /* background-color: lightgreen; */
+        }
+        .bg-red {
+            background-color: red;
+        }
+        .bold {
+            font-weight: 700;
+        }
+        .big {
+            font-size: 3em;
+        }
+        .food .foreign {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>This is my Header</h1>
+    </header>
+    <main id="main-container">
+        <section id="old-dhaka" class="songs">
+            <h1>Welcome to my DOM</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, necessitatibus <span>Oli Goli</span> aspernatur vitae, in iure voluptatibus at praesentium <span>Alias</span> autem explicabo doloribus harum eum ut est tenetur sed ex.</p>
+            <h1>Lorem ipsum <span>some text</span> consectetur adipisicing elit. Eveniet, esse.</h1>
+            <ul>
+                <li class="foreign">HTML5</li>
+                <li class="international">CSS3</li>
+                <li id="band">JavaScript</li>
+            </ul>
+        </section>
+
+        <section class="food">
+            <h1 id="food-title" class="fav-food">Foods I love: </h1>
+            <ul>
+                <li class="foreign">Burger</li>
+                <li class="foreign">pizza</li>
+                <li class="foreign">pasta</li>
+                <li>lentil</li>
+                <li>fish</li>
+                <li>potato</li>
+                <li>rice</li>
+            </ul>
+        </section>
+
+
+        <section id="players-container">
+            <h1>Players</h1>
+            <ul id="player-list">
+                <li>Messi</li>
+                <li>Pele</li>
+                <li>Ronaldo</li>
+                <li>Embape</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+
+
+        // console.log('Hello from JavaScript!!!');
+        // console.log("This is JS!!!");
+        // console.log("DOM - Document Object Model");
+
+        /* const student = {
+            name: "Abul mia",
+            id: 121,
+            study: function(subject) {
+                console.log("Studying subject: ", subject);
+            }
+        } */
+
+
+
+        // get by tagName
+        // document.getElementsByTagName('li');
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        // for-of loop
+        // li.innerText
+        for(const li of liCollection) {
+           // console.log(li.innerText);
+        }
+
+        // all h1 tags
+        const allHeadings = document.getElementsByTagName('h1');
+        for (const h1 of allHeadings) {
+           // console.log(h1.innerText);
+        }
+
+
+        // get by id
+        // document.getElementById('food-title');
+        const foodTitle = document.getElementById('food-title');
+        // console.log(foodTitle.innerText);
+        // change innerText
+        foodTitle.innerText = "Foods that makes me happy:";
+
+        const bandElement = document.getElementById('band');
+        bandElement.innerText = "Javascript makes the website interactive."
+
+
+
+
+        // get by class
+        // document.getElementsByClassName('foreign');
+        const foreignElements = document.getElementsByClassName('foreign');
+        // console.log(foreignElements);
+        for(const element of foreignElements) {
+           // console.log(element.innerText);
+        }
+
+
+        // get by valid css
+        // querySelectorAll
+       // console.log(document.querySelectorAll('.food .foreign'));
+
+        const spanElements = document.querySelectorAll('#old-dhaka p span');
+        for (const span of spanElements) {
+           // console.log(span.innerText);
+        }
+
+        // querySelector
+        // console.log(document.querySelector('#old-dhaka span'));
+
+
+        // innerText
+        const foodElement = document.getElementById('food-title');
+        foodElement.innerText = 'Foods I LOVE:';
+
+        // style
+        // foodElement.style.color = 'blue';
+        // foodElement.style.backgroundColor = "lightblue";
+        // foodElement.style.marginLeft = "20px";
+        // foodElement.style.textAlign = "center";
+        // foodElement.style.borderRadius = "10px";
+
+        // classList.add , classList.remove
+        // foodElement.classList.add('bg-red');
+        // foodElement.classList.remove('bg-red');
+
+        // getAttribute
+        // console.log(foodElement.getAttribute('id'));
+        // console.log(foodElement.getAttribute('class'));
+
+        // setAttribute
+        // console.log(foodElement.setAttribute('title', 'Title or tooltip by JS'));
+
+        // innerText , innerHTML
+        // console.log(document.getElementById('players-container').innerText);
+        // console.log(document.getElementById('players-container').innerHTML);
+        // document.getElementById('players-container').innerText = 'tom';
+        // document.getElementById('players-container').innerHTML = '<li>football</li>';
+
+
+
+        // childNodes
+        // console.log(document.getElementById('players-container').childNodes);
+        // console.log(document.getElementById('players-container').childNodes[0]);
+        // console.log(document.getElementById('players-container').childNodes[3].childNodes);
+        // console.log(document.getElementById('players-container').childNodes[3].childNodes[1]);
+
+        // parentNode
+        // console.log(document.getElementById('players-container').childNodes[3].childNodes[1].parentNode);
+        // console.log(document.getElementById('players-container').childNodes[3].childNodes[1].parentNode.parentNode);
+        // console.log(document.getElementById('players-container').childNodes[3].childNodes[1].parentNode.parentNode.parentNode);
+
+        // createElement
+        // console.log(document.createElement('p'));
+        // console.log(document.createElement('li'));
+        // console.log(document.createElement('h1'));
+        // console.log(document.createElement('span'));
+        // console.log(document.createElement('section'));
+
+
+        // 3 steps to add an element
+        // create element and set innerText or innerHTML
+        // const newChild = document.createElement('li');
+        // newChild.innerText = 'New born baby footballer';
+        // find the parent where you will add the child
+        // const playersList = document.getElementById('player-list');
+        // append the child to the parent
+        // playersList.appendChild(newChild);
+
+    </script>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/cssInJs.js"></script>
+    <script src="./js/child-parent-Node.js"></script>
+    <script src="./js/append.js"></script>
+</body>
+</html>

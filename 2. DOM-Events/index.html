@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Events</title>
+</head>
+<body>
+    <h1>DOM Events</h1>
+    <!-- option-1 for event handler -->
+    <button onclick="console.log(7)">Click me</button>
+    <button onclick="console.log(63)">Another Button</button>
+    <button onclick="console.log('I am clicked')">Third button</button>
+    <input type="text">
+    <br><br>
+
+     <!-- option-2 for event handler -->
+     <button onclick="makeYellow()">Make Yellow</button>
+     <button onclick="makeRed()">Make Red</button>
+     <br><br>
+
+     <!-- option-3 for event handler - get element by ID and then set onclick -->
+     <button id="btn-make-blue">Make Blue</button>
+     <br><br>
+
+     <!-- option-4 for event handler -->
+     <button id="btn-make-purple">Make Purple</button>
+     <br><br>
+
+     <!-- option-5 for event handler - addEventListener() -->
+     <button id="btn-make-green">Make Green</button>
+     <button id="btn-make-salmon">Make Salmon</button>
+     <script>
+        // document.getElementById('idName').addEventListener('eventType', handlerFunction)
+        document.getElementById('btn-make-green').addEventListener('click', function makeGreen() {
+            document.body.style.backgroundColor = 'green';
+        })
+
+        document.getElementById('btn-make-salmon').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'salmon';
+        })
+     </script>
+
+
+
+    <script src="./js/events.js"></script>
+</body>
+</html>
